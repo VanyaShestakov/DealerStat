@@ -29,6 +29,14 @@ public class Comment {
     @JoinColumn(name = "author_id")
     private User author;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getMessage() {
         return message;
     }

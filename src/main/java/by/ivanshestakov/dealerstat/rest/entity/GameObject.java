@@ -20,7 +20,7 @@ public class GameObject {
     @Column(name = "text")
     private String text;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private Status status;
 
@@ -41,6 +41,14 @@ public class GameObject {
             joinColumns = @JoinColumn(name = "gameobject_id"),
             inverseJoinColumns = @JoinColumn(name = "game_id"))
     private List<Game> games;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
