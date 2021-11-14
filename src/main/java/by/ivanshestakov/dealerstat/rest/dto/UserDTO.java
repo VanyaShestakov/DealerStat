@@ -1,13 +1,14 @@
-package by.ivanshestakov.dealerstat.rest.security.entity;
+package by.ivanshestakov.dealerstat.rest.dto;
 
 import javax.persistence.Column;
 
-public class RegRequest {
+public class UserDTO {
 
     private String firstName;
     private String lastName;
     private String password;
     private String email;
+    private String roleName;
 
     public String getFirstName() {
         return firstName;
@@ -39,5 +40,13 @@ public class RegRequest {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 }

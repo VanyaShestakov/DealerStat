@@ -5,6 +5,7 @@ import by.ivanshestakov.dealerstat.rest.dto.converter.CommentConverter;
 import by.ivanshestakov.dealerstat.rest.entity.Comment;
 import by.ivanshestakov.dealerstat.rest.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class CommentController {
     private final CommentConverter converter;
 
     @Autowired
-    public CommentController(CommentService commentService, CommentConverter converter) {
+    public CommentController(CommentService commentService, @Qualifier("commentConverter") CommentConverter converter) {
         this.commentService = commentService;
         this.converter = converter;
     }
