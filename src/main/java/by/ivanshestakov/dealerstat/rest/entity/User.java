@@ -1,5 +1,6 @@
 package by.ivanshestakov.dealerstat.rest.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -17,19 +18,15 @@ public class User {
     @Column(name = "id")
     private int id;
 
-    @NotEmpty
     @Column(name = "first_name")
     private String firstName;
 
-    @NotEmpty
     @Column(name = "last_name")
     private String lastName;
 
-    @NotEmpty
     @Column(name = "password")
     private String password;
 
-    @Email
     @Column(name = "email")
     private String email;
 
@@ -37,6 +34,7 @@ public class User {
     @Column(name = "created_at")
     private Date createdAt;
 
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "role_id")
     private Role role;

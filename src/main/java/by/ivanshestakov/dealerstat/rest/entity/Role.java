@@ -14,19 +14,17 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-
-    @Enumerated
     @Column(name = "name")
-    private UserRole name;
+    private String name;
 
     @OneToMany(mappedBy = "role")
     private List<User> users;
 
-    public UserRole getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(UserRole name) {
+    public void setName(String name) {
         this.name = name;
     }
 
