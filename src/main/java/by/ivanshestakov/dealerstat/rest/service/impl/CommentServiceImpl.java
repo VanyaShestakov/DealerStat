@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class CommentServiceImpl implements CommentService {
 
@@ -22,4 +24,12 @@ public class CommentServiceImpl implements CommentService {
     public void saveComment(Comment comment) {
         commentRepository.save(comment);
     }
+
+    @Override
+    @Transactional
+    public List<Comment> getAllComments() {
+        return commentRepository.findAll();
+    }
+
+
 }
