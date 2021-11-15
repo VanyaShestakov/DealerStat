@@ -44,7 +44,7 @@ public class JwtFilter extends GenericFilterBean {
 
     private String getToken(HttpServletRequest request) {
         String value = request.getHeader(HEADER_KEY_NAME);
-        if (value.startsWith(BEARER_PREFIX)) {
+        if (value != null && value.startsWith(BEARER_PREFIX)) {
             return value.substring(7);
         }
         return null;
