@@ -9,6 +9,15 @@ public class UserDTO {
     private String password;
     private String email;
     private String roleName;
+    private boolean confirmed;
+
+    public boolean isConfirmed() {
+        return confirmed;
+    }
+
+    public void setConfirmed(boolean confirmed) {
+        this.confirmed = confirmed;
+    }
 
     public String getFirstName() {
         return firstName;

@@ -10,4 +10,6 @@ public interface UserService {
 
     public User find(String email, String password);
 
+    public void saveConfirmCodeForUser(String code, User user);
+
 }

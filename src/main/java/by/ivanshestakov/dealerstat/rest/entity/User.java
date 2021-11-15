@@ -39,6 +39,9 @@ public class User {
     @JoinColumn(name = "role_id")
     private Role role;
 
+    @Column(name = "confirmed")
+    private boolean confirmed;
+
     @OneToOne(mappedBy = "user")
     private ConfirmationCode confirmationCode;
 
@@ -54,6 +57,14 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public boolean isConfirmed() {
+        return confirmed;
+    }
+
+    public void setConfirmed(boolean confirmed) {
+        this.confirmed = confirmed;
     }
 
     public String getFirstName() {

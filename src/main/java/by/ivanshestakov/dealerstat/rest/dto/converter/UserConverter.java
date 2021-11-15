@@ -24,6 +24,7 @@ public class UserConverter {
         user.setLastName(userDTO.getLastName());
         user.setEmail(userDTO.getEmail());
         user.setPassword(userDTO.getPassword());
+        user.setConfirmed(userDTO.isConfirmed());
         Role role = roleRepository.findByName("ROLE_" + userDTO.getRoleName())
                 .orElseThrow(() -> {
                     throw new RecordNotFoundException("Role with name=" + userDTO.getRoleName() + " not found");
